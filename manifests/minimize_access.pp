@@ -63,7 +63,7 @@ class os_hardening::minimize_access (
   # ensure accounts are locked (no password) and use nologin shell
   user { $target_system_users:
     ensure   => present,
-    shell    => '/usr/sbin/nologin',
+    shell    => '/sbin/nologin',
     password => '*',
   }
 
