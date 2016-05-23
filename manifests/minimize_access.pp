@@ -21,8 +21,8 @@ class os_hardening::minimize_access (
     '/usr/local/bin',
     '/usr/sbin',
     '/usr/bin',
-    '/sbin',
-    '/bin',
+#    '/sbin',
+#    '/bin',
   ]
 
   # remove write permissions from path folders ($PATH) for all regular users
