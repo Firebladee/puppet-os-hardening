@@ -143,4 +143,12 @@ describe 'os_hardening::sysctl' do
     end
   end
 
+  context 'with log_martians => true' do
+    let(:params) {{ :log_martians => true }}
+    it { is_expected.to contain_sysctl('net.ipv4.conf.all.log_martians').with_value('1') }
+  end
+  context 'with log_martians => false' do
+    let(:params) {{ :log_martians => false }}
+    it { is_expected.to contain_sysctl('net.ipv4.conf.all.log_martians').with_value('0') }
+  end
 end
