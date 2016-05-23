@@ -9,3 +9,5 @@ test/integration
 Puppetfile.lock
 Gemfile.lock
 coverage
+/spec/fixtures
+.*.swp

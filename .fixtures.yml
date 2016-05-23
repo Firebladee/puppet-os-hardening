@@ -1,3 +1,4 @@
 fixtures:
-  repositories:
-    sysctl: https://github.com/thias/puppet-sysctl.git
+  forge_modules:
+    sysctl: "thias/sysctl"
+    stdlib: "puppetlabs/stdlib"

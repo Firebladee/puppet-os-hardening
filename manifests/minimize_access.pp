@@ -21,15 +21,15 @@ class os_hardening::minimize_access (
     '/usr/local/bin',
     '/usr/sbin',
     '/usr/bin',
-#    '/sbin',
-#    '/bin',
+#    '/sbin', # os differance
+#    '/bin',  # os differance
   ]
 
   # remove write permissions from path folders ($PATH) for all regular users
   # this prevents changing any system-wide command from normal users
   file { $folders:
     ensure  => 'directory',
-#    links   => 'follow',
+#    links   => 'follow', # os differance
     mode    => 'go-w',
     recurse => true,
   }
@@ -61,10 +61,10 @@ class os_hardening::minimize_access (
   $target_system_users = difference($system_users, $ignore_users_arr)
 
   # ensure accounts are locked (no password) and use nologin shell
-  user { $target_system_users:
-    ensure   => present,
-    shell    => '/sbin/nologin',
-    password => '*',
-  }
-
+  # os differance
+#  user { $target_system_users:
+#    ensure   => present,
+#    shell    => '/sbin/nologin',
+#    password => '*',
+#  }
 }
