@@ -42,7 +42,7 @@ class os_hardening::minimize_access (
   }
 
   # su must only be accessible to user and group root
-  if $allow_change_user == true {
+  if $allow_change_user {
     file { '/bin/su':
       ensure => file,
       owner  => 'root',
